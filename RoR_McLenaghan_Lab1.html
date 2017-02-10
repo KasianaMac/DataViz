@@ -146,11 +146,33 @@
         	/* Here are some variables that are relevant to my research on Vietnamese refugees in China */
         	
         	var Refugees_resettled_in_USA_1975 = 140000;
+            /* The number of Vietnamese resettled in Vietnam after Saigon fell in 1975 */
+
         	var Country_of_origin = "Vietnam";
-        	var Ongoing_refugee_situation = false;
-        	var Refugee_ethnic_pops = {"Han_Chinese":true, "Vietnamese":true, "Laotian": true};
-        	var Receiving_camps = ["Hong Kong","Liguang","Dongxing","Beihai","Qiaogang" ];
+            /* Where this refugee crisis originated */
         	
+            var Ongoing_refugee_situation = false;
+            /* This is no longer an active refugee crisis; most persons have been resettled or returned to Veitnam */
+        	
+            var Resettled_pops_by_country = {"Vietnam":750000,"Cambodia":225000,"Laos":310000};
+            /* The number of people resettled, by country of origin, from 1975 through 1997 */
+        	
+            var Receiving_camps = ["Hong Kong","Liguang","Dongxing","Beihai","Qiaogang" ];
+            /* The names of the main refugee receiving camps in China */
+        	
+            var Vietnamese_refugee_crisis_overview = {
+                "Refugees_by_year":{"1980":33000,"1996":34400},
+                "Returnees_by_year":{"1980":50760, "1996":25360}, 
+                "Refugee ethnic populations":["Han Chinese", "Vietnamese","Laotian", "Cambodian"],
+                "Countries of first asylum":["Thailand","Singapore","Malaysia","Indonesia","Philippines","China"],
+                "Stateless_Vietnamese_2017": 11000
+                };
+            /* Refugees and returnees by year; the ethnic origins of refugee populations caught up in the crisis; and the 
+            countries where those refugees first fled, before being resettled in a third country or returned home */
+
+            console.log(Receiving_camps[1]);
+            console.log(Vietnamese_refugee_crisis_overview.Stateless_Vietnamese_2017);
+
         </script>
         
         
