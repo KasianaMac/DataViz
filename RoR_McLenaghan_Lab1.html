@@ -171,6 +171,49 @@
             /* Refugees and returnees by year; the ethnic origins of refugee populations caught up in the crisis; and the 
             countries where those refugees first fled, before being resettled in a third country or returned home */
 
+			
+			/* The below is actualy a list of objects; each object is an article.  This is Susan's example from class */
+
+			var my_articles = [
+				{"title":"The Scale of the Migrant Crisis, From 160 to Millions",
+				"source":"nytimes",
+				"url":"https://www.nytimes.com/interactive/2015/09/10/world/europe/scale-of-migrant-crisis-in-europe.html",
+				"image":"https://blog.webkid.io/refugee-crisis-visualization-collection/1442402221_e3cd2e19d79a4aa7baac8bf878d95080.png",
+				"summary":"Summary here."},
+				
+				{"title":"Comprendre la crise des migrants en Europe en cartes, graphiques et vidéos",
+				"source":"lemonde",
+				"url":"https://www.nytimes.com/interactive/2015/09/10/world/europe/scale-of-migrant-crisis-in-europe.html",
+				"image":"https://blog.webkid.io/refugee-crisis-visualization-collection/1442402221_e3cd2e19d79a4aa7baac8bf878d95080.png",
+				"summary":"Summary here."},
+				
+				{"title":"Comprendre la crise des migrants en Europe en cartes, graphiques et vidéos",
+				"source":"lemonde",
+				"url":"https://www.nytimes.com/interactive/2015/09/10/world/europe/scale-of-migrant-crisis-in-europe.html",
+				"image":"https://blog.webkid.io/refugee-crisis-visualization-collection/1442402221_e3cd2e19d79a4aa7baac8bf878d95080.png",
+				"summary":"Summary here."},
+				
+				{"title":"Going Home to Falluja, a City Slipping Back Into Turmoil",
+				"source":"nytimes",
+				"url":"https://www.nytimes.com/2017/02/10/world/middleeast/falluja-iraq-isis.html?rref=collection%2Ftimestopic%2FRefugees%20and%20Displaced%20People&action=click&contentCollection=timestopics&region=stream&module=stream_unit&version=latest&contentPlacement=6&pgtype=collection",
+				"image":"",
+				"summary":"Summary here."}	
+			];
+			/* Goal is to review the list of articles and only console log the ones that originate from nyt.
+			 * To do this we're going to make a for loop */
+			
+			for (var counter = 0; counter < my_articles.length; counter++){
+
+				var current_article = my_articles[counter];
+				if (current_article.source == 'nytimes'){
+					console.log(current_article);
+				}
+				else{
+					console.log('Not NY Times');
+				}
+			}
+			
+				
             console.log(Receiving_camps[1]);
             console.log(Vietnamese_refugee_crisis_overview.Stateless_Vietnamese_2017);
 
