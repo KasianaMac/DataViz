@@ -1,0 +1,33 @@
+/* Here is my style guide */
+.articleTitlekjm {
+	font-weight: bold;
+	font-size: 24px;
+	font-family: Calibri, Helvetica, sans-serif;
+	color: #262626;
+}
+.subHeadkjm {
+	font-style: italic;
+	font-size: 16px;
+	font-family: Calibri, Helvetica, sans-serif;
+	color: #262626;
+}
+.bylinekjm {
+	font-size: 12px;
+	font-family: Calibri, Helvetica, sans-serif;
+	color: #262626;
+}
+.dateHeadkjm {
+	font-variant: small-caps;
+	font-size: 12px;
+	font-family: Calibri, Helvetica, sans-serif;
+	color: #262626;
+}
+.bodykjm {
+	line-height: 20px font-size : 12px;
+	font-family: Calibri, Helvetica, sans-serif;
+}
+img {
+	size: 100%;
+	max-height: 300px;
+	max-width: 100%;
+}
