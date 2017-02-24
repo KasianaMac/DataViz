@@ -4,54 +4,59 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="styles.css" />
-		<title>RoR: Vietnamese Boat People in China</title>
+		<title>RoR: Kasiana's Lab Homework</title>
 		<!--Load the AJAX API-->
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 		<script type="text/javascript">
-			// Load the Visualization API and the corechart package.
-			// 'current' just points you to the current version of the API, rather than a specific version
+		// Load google's Visualization API and charting package.
+
 			google.charts.load('current', {
+			// 'current' points you to the current version of the API, rather than a specific version
 				'packages' : ['corechart']
+				// this is the package we will use to make our chart
 			});
 
-			//  When Google gets the corechart package, execute the drawChart function
+			// After Google gets the corechart package, execute the drawChart function
+			// (don't try to execute the drawChart function before the package has loaded)
 			google.charts.setOnLoadCallback(drawChart);
 
 			// Callback that creates and populates a data table,
-			// instantiates the pie chart, passes in the data and
-			// draws it.
+			// instantiates the pie chart, passes in the data and then draws it.
 			function drawChart() {
 
 				// Calls google's DataTable recipe
-				var my_chart_data = new google.visualization.DataTable();
+				var km_gorgeous_data = new google.visualization.DataTable();
 				//specifies what the column value type and headings will be
-				my_chart_data.addColumn('string', 'Topping');
-				my_chart_data.addColumn('number', 'Slices');
+				km_gorgeous_data.addColumn('string', 'Time Allocation');
+				//column number 2
+				km_gorgeous_data.addColumn('number', 'Hours');
 				//adds rows into the DataTable, matching the syntax I defined above in the addColumn function
-				my_chart_data.addRows([['Mushrooms', 3], ['Onions', 1], ['Olives', 1], ['Zucchini', 1], ['Pepperoni', 2]]);
+				km_gorgeous_data.addRows([['Sleeping', 7], ['Waiting for the 1 train', .25],
+				['Riding the 1 train', .75], ['In Class', 5],['In Brown',6],['Listening to NPR', 1],
+				['Talking on the Phone',4]]);
 
 				// Customization area to define what we want the chart to look like.
 				// See https://developers.google.com/chart/interactive/docs/basic_customizing_chart#specify-options
-				var my_chart_options = {
-					'title' : 'How Much Pizza I Ate Last Night',
+				var km_gorgeous_chart_options = {
+					'title' : 'How I Spend My Day',
 					'width' : 400,
 					'height' : 300
 				};
 
-				// chart stores the results of the PieChart function
+				// This variable stores the results of the PieChart function, called from Google's charting package
 				// PieChart takes a document function (a native javascript function, refers to an html document)
 				// getElement lets you retrieve a tagged thing in an html file.  ById means it looks for a tag.
 				// All of that means that getElementById is retrieving something tagged 'chart_div'
-				var chart = new google.visualization.PieChart(document.getElementById('chart_container'));
-				chart.draw(my_chart_data, my_chart_options);
+				var day_pie = new google.visualization.PieChart(document.getElementById('chart_container'));
+				day_pie.draw(km_gorgeous_data, km_gorgeous_chart_options);
 			}
 		</script>
 	</head>
 
 	<body>
 		<!-- This div will contain information that specify the chart I'm creating with the google charting library -->
-		<div id='chart_container'> </div>
+		<div id='day_pie_container' width='400' height='300'> </div>
 
 		<!--
 		This first div container will be the template for additional articles.
