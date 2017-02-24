@@ -32,23 +32,33 @@
 				//column number 2
 				km_gorgeous_data.addColumn('number', 'Hours');
 				//adds rows into the DataTable, matching the syntax I defined above in the addColumn function
-				km_gorgeous_data.addRows([['Sleeping', 7], ['Waiting for the 1 train', .25],
-				['Riding the 1 train', .75], ['In Class', 5],['In Brown',6],['Listening to NPR', 1],
-				['Talking on the Phone',4]]);
+				km_gorgeous_data.addRows([['Sleeping', 7],['Riding the 1', 1], ['In class', 5],
+				['In Brown',6],['On the phone',5]]);
 
 				// Customization area to define what we want the chart to look like.
 				// See https://developers.google.com/chart/interactive/docs/basic_customizing_chart#specify-options
 				var km_gorgeous_chart_options = {
+					//The string for the title that will appear at the top
 					'title' : 'How I Spend My Day',
+					//how wide my chart will be, in pixels
 					'width' : 400,
-					'height' : 300
+					//how high my chart will be, in pixels
+					'height' : 300,
+					//what colors my char will use to draw the pie chart (chosen from Pantone colors, obvs)
+					'colors':['#EABEDB','#E56DB1','#DA1884','#A50050','#910048'],
+					//the font I want to use in the body of the chart
+					'fontName':'Tahoma',
+					//whether I want my legend to appear as a static bit (default), or when you mouse over the slices
+					'legend.position':'labeled',
+					//an object that defines the styling for my title
+					'titleTextStyle':{fontName:'Helvetica', bold:true,fontSize:18}
 				};
 
 				// This variable stores the results of the PieChart function, called from Google's charting package
 				// PieChart takes a document function (a native javascript function, refers to an html document)
 				// getElement lets you retrieve a tagged thing in an html file.  ById means it looks for a tag.
 				// All of that means that getElementById is retrieving something tagged 'chart_div'
-				var day_pie = new google.visualization.PieChart(document.getElementById('chart_container'));
+				var day_pie = new google.visualization.PieChart(document.getElementById('day_pie_container'));
 				day_pie.draw(km_gorgeous_data, km_gorgeous_chart_options);
 			}
 		</script>
