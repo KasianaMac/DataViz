@@ -28,8 +28,13 @@
 }
 
 #day_pie_container{
-	width:400px;
-	height: 300px;
+	width:500px;
+	height: 400px;
+}
+
+#second_pie_container{
+	width:500px;
+	height: 400px;
 }
 
 img {
