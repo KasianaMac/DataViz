@@ -19,13 +19,13 @@
 				// this is the package we will use to make our chart
 			});
 
-			// After Google gets the corechart package, execute the drawChart function
-			// (don't try to execute the drawChart function before the package has loaded)
-			google.charts.setOnLoadCallback(drawChart);
+			// After Google gets the corechart package, execute the km_makes_a_chart function
+			// (don't try to execute the km_makes_a_chart function before the package has loaded)
+			google.charts.setOnLoadCallback(km_makes_a_chart);
 
 			// Callback that creates and populates a data table,
 			// instantiates the pie chart, passes in the data and then draws it.
-			function drawChart() {
+			function km_makes_a_chart() {
 
 				// Calls google's DataTable recipe
 				var km_gorgeous_data = new google.visualization.DataTable();
@@ -68,7 +68,7 @@
 
 	<body>
 		<!-- This div will contain information that specify the chart I'm creating with the google charting library -->
-		<div id='day_pie_container' width='400' height='300'> </div>
+		<div id='day_pie_container'> </div>
 
 		<!--
 		This first div container will be the template for additional articles.

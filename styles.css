@@ -26,6 +26,12 @@
 	line-height: 20px font-size : 12px;
 	font-family: Calibri, Helvetica, sans-serif;
 }
+
+#day_pie_container{
+	width:400px;
+	height: 300px;
+}
+
 img {
 	size: 100%;
 	max-height: 300px;
