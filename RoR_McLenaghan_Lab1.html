@@ -17,7 +17,7 @@
 
 			google.charts.load('current', {
 				// 'current' points you to the current version of the API, rather than a specific version
-				'packages' : ['corechart']
+				'packages' : ['corechart','line']
 				// this is the package we will use to make our chart
 			});
 
@@ -26,13 +26,13 @@
 			google.charts.setOnLoadCallback(draw_many_charts);
 
 			function draw_many_charts() {
-				km_makes_a_chart();
-				km_makes_another_chart();
+				km_makes_a_pie_chart();
+				km_makes_a_line_chart();
 			}
 
 			// Callback that creates and populates a data table,
 			// instantiates the pie chart, passes in the data and then draws it.
-			function km_makes_a_chart() {
+			function km_makes_a_pie_chart() {
 
 				// Calls google's DataTable recipe
 				var km_gorgeous_data = new google.visualization.DataTable();
@@ -74,47 +74,55 @@
 				day_pie.draw(km_gorgeous_data, km_gorgeous_chart_options);
 			}
 
-			function km_makes_another_chart() {
+			//my function to make a pretty line chart
+			function km_makes_a_line_chart() {
+				
+				//Calls google's DataTable recipe (again)
+				var km_line_data = new google.visualization.DataTable();
+				//specifies what the line value type and headings will be
+				//this one is just time, I don't really want it labeled
+				km_line_data.addColumn('number', 'X');
+				//column 2 is number of kids in SF
+				km_line_data.addColumn('number', 'Children living in San Francisco');
 
-				// Calls google's DataTable recipe
-				var km_gorgeous_data = new google.visualization.DataTable();
-				//specifies what the column value type and headings will be
-				km_gorgeous_data.addColumn('string', 'Time Allocation');
-				//column number 2
-				km_gorgeous_data.addColumn('number', 'Hours');
-				//adds rows into the DataTable, matching the syntax I defined above in the addColumn function
-				km_gorgeous_data.addRows([['Sleeping', 7], ['Riding the 1', 1], ['In class', 5], ['In Brown', 6], ['On the phone', 5]]);
+				//adds my data into the datatable object
+				km_line_data.addRows([
+					[1970, 181303],
+					[1971, 176236],
+					[1972, 169973],
+					[1973, 165711],
+					[1974, 160847],
+					[1975, 153177],
+					[1976, 149644],
+					[1977, 144615],
+					[1978, 140617],
+					[1979, 136765],
+					[1980, 134458],
+					[1981, 133773]
+				]);
 
-				// Customization area to define what we want the chart to look like.
-				// See https://developers.google.com/chart/interactive/docs/basic_customizing_chart#specify-options
-				var km_gorgeous_chart_options = {
-					//The string for the title that will appear at the top
-					'title' : 'How I Spend My Day',
-					//how wide my chart will be, in pixels
-					'width' : 500,
-					//how high my chart will be, in pixels
-					'height' : 400,
-					//what colors my char will use to draw the pie chart (chosen from Pantone colors, obvs)
-					'colors' : ['#EABEDB', '#E56DB1', '#DA1884', '#A50050', '#910048'],
-					//the font I want to use in the body of the chart
-					'fontName' : 'Tahoma',
-					//whether I want my legend to appear as a static bit (default), or when you mouse over the slices
-					'legend.position' : 'labeled',
-					//an object that defines the styling for my title
-					'titleTextStyle' : {
-						fontName : 'Helvetica',
-						bold : true,
-						fontSize : 18
-					}
+				//an object that stores all the customizations I want to make to my line chart
+				var km_line_chart_options = {
+					//title for my whole chart
+					title:'The number of children living in San Francisco plummetted from 1970 to 1980',
+					//gives a title to my horizontal axis
+					hAxis: {title: 'Year',format: '', ticks: [1970,1975,1980] },
+					//gives a title to the line it drew
+					vAxis: {title: 'Children'},
+					colors: ['#DA1884'],
+					legend: {position:'bottom'},
+					height: 500,
+					width: 400
 				};
 
 				// This variable stores the results of the PieChart function, called from Google's charting package
 				// PieChart takes a document function (a native javascript function, refers to an html document)
 				// getElement lets you retrieve a tagged thing in an html file.  ById means it looks for a tag.
 				// All of that means that getElementById is retrieving something tagged 'chart_div'
-				var second_pie = new google.visualization.PieChart(document.getElementById('second_pie_container'));
-				second_pie.draw(km_gorgeous_data, km_gorgeous_chart_options);
-			}
+				var kids_line = new google.visualization.LineChart(document.getElementById('kids_line_container'));
+				kids_line.draw(km_line_data, km_line_chart_options);
+				}
+
 		</script>
 	</head>
 
@@ -138,7 +146,7 @@
 					add up to 12 -->
 				<div class='col-md-6'>
 					<!-- This div contains the second chart I'm creating, still using the google charting library -->
-					<div id='second_pie_container'></div>
+					<div id='kids_line_container'></div>
 				</div>
 			</div>
 			
