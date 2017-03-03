@@ -84,7 +84,6 @@
 				km_line_data.addColumn('number', 'X');
 				//column 2 is number of kids in SF
 				km_line_data.addColumn('number', 'Children living in San Francisco');
-
 				//adds my data into the datatable object
 				km_line_data.addRows([
 					[1970, 181303],
@@ -105,20 +104,24 @@
 				var km_line_chart_options = {
 					//title for my whole chart
 					title:'The number of children living in San Francisco plummetted from 1970 to 1980',
-					//gives a title to my horizontal axis
+					//gives a title to my horizontal axis, and tells it where I want my gridlines to be
 					hAxis: {title: 'Year',format: '', ticks: [1970,1975,1980] },
 					//gives a title to the line it drew
 					vAxis: {title: 'Children'},
+					//tells the chart what colors I want to use to draw things (sticking with pink)
 					colors: ['#DA1884'],
+					//puts the legend at the bottom, so you can read it
 					legend: {position:'bottom'},
+					//tells it how tall to draw the line chart
 					height: 500,
+					//tells it how wide to make the line chart
 					width: 400
 				};
 
-				// This variable stores the results of the PieChart function, called from Google's charting package
-				// PieChart takes a document function (a native javascript function, refers to an html document)
+				// This variable stores the results of the LineChart function, called from Google's charting package
+				// LineChart takes a document function (a native javascript function, refers to an html document)
 				// getElement lets you retrieve a tagged thing in an html file.  ById means it looks for a tag.
-				// All of that means that getElementById is retrieving something tagged 'chart_div'
+				// All of that means that getElementById is retrieving something tagged 'kids line container'
 				var kids_line = new google.visualization.LineChart(document.getElementById('kids_line_container'));
 				kids_line.draw(km_line_data, km_line_chart_options);
 				}
